@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View } from 'react-native';
 
 import theme from '@/styles/theme';
@@ -13,6 +13,8 @@ function butonAlert() {
     console.log('Pressionado!')
 }
 
+
+
 export function Login() {
     return (
         <View style={styles.container}>
@@ -25,8 +27,18 @@ export function Login() {
             </View>
 
             <View style={styles.viewInput}>
-                <Input icon="person-outline" size={26} color={theme.COLORS.GRAY3} placeholder='Username' />
-                <Input icon="password" size={26} color={theme.COLORS.GRAY3} placeholder='Password' />
+                <Input
+                    icon="person-outline"
+                    secureTextEntry={false} size={26}
+                    color={theme.COLORS.GRAY3}
+                    placeholder='Username' />
+
+                <Input
+                    icon="password"
+                    secureTextEntry
+                    RightIcon size={26}
+                    color={theme.COLORS.GRAY3}
+                    placeholder='Password' />
             </View>
 
             <View style={styles.viewButtonSend}>

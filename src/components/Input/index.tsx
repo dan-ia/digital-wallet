@@ -7,27 +7,47 @@ import React, {
     useEffect,
 } from 'react';
 import { useField } from '@unform/core'
-import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialIcons, Ionicons } from '@expo/vector-icons';
 
-import { TextInput, View, TextInputProps } from 'react-native';
+import { TextInput, View, TextInputProps, TouchableOpacity, } from 'react-native';
 
 import { styles } from './styles';
 import theme from '@/styles/theme';
 
 type inputProps = {
     placeholder: string,
+    RightIcon?: boolean
     name?: string,
     value?: string,
     color: string,
     size: number,
     icon?: React.ComponentProps<typeof MaterialIcons>["name"]
+    secureTextEntry?: boolean,
 }
 
-export function Input({ placeholder, name, value, icon, size, color }: inputProps) {
+
+
+export function Input({ placeholder, RightIcon, name, value, icon, size, color, secureTextEntry, ...rest }: inputProps) {
+
+    const [secury, setSecury] = useState(secureTextEntry)
+
     return (
-        <View style={styles.inputContain}>
+        <View style={styles.inputContain} >
             <MaterialIcons name={icon} size={size} color={color} />
-            <TextInput style={styles.input} placeholder={placeholder} />
+
+            <TextInput
+                {...rest}
+                cursorColor={"#000"}
+                secureTextEntry={secury}
+                style={styles.input}
+                placeholder={placeholder} />
+
+            {RightIcon && (
+                <TouchableOpacity onPress={() => setSecury(!secury)}>
+                    <Ionicons name={secury ? 'eye-off' : 'eye'} size={size} color={color} />
+                </TouchableOpacity>)
+            }
         </View>
     );
 }
+

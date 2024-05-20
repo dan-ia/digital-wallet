@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 10,
         paddingLeft: 16,
+        paddingRight: 40,
         backgroundColor: theme.COLORS.GRAY6,
     },
     input: {
@@ -17,5 +18,5 @@ export const styles = StyleSheet.create({
         paddingLeft: 10,
         fontSize: 20,
         fontFamily: theme.FONTS.TEXT
-    }
+    },
 });
