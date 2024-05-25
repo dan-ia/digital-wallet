@@ -7,12 +7,13 @@ import React, {
     useEffect,
 } from 'react';
 import { useField } from '@unform/core'
+
 import { MaterialIcons, Ionicons } from '@expo/vector-icons';
 
 import { TextInput, View, TextInputProps, TouchableOpacity, } from 'react-native';
 
 import { styles } from './styles';
-import theme from '@/styles/theme';
+
 
 type inputProps = {
     placeholder: string,
@@ -23,6 +24,7 @@ type inputProps = {
     size: number,
     icon?: React.ComponentProps<typeof MaterialIcons>["name"]
     secureTextEntry?: boolean,
+    TextInputProps?: TextInputProps
 }
 
 
@@ -37,6 +39,8 @@ export function Input({ placeholder, RightIcon, name, value, icon, size, color, 
 
             <TextInput
                 {...rest}
+                autoCapitalize='none'
+                autoCorrect={false}
                 cursorColor={"#000"}
                 secureTextEntry={secury}
                 style={styles.input}

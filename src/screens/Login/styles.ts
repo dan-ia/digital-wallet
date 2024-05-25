@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
     viewInput: {
         width: '100%',
         gap: 20,
-        marginTop: 100,
+        marginTop: 40,
     },
     viewButtonSend: {
         width: 200,
@@ -42,7 +42,6 @@ export const styles = StyleSheet.create({
     viewRegister: {
         marginTop: 10,
         flexDirection: 'row',
-
     },
     noregister: {
         fontFamily: theme.FONTS.TEXT,
@@ -50,6 +49,7 @@ export const styles = StyleSheet.create({
     },
     register: {
         fontFamily: theme.FONTS.TEXT,
-        color: theme.COLORS.BLUE1
+        color: theme.COLORS.BLUE1,
+        paddingBottom: 40,
     }
 });
