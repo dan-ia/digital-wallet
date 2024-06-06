@@ -31,13 +31,16 @@ export const styles = StyleSheet.create({
     viewInput: {
         width: '100%',
         gap: 20,
-        marginTop: 40,
+        marginTop: 100,
+    },
+    resetPassword: {
+        paddingTop: 20,
     },
     viewButtonSend: {
         width: 200,
         flexDirection: 'row',
         justifyContent: 'center',
-        marginTop: 60,
+        marginTop: 30,
     },
     viewRegister: {
         marginTop: 10,
@@ -51,5 +54,6 @@ export const styles = StyleSheet.create({
         fontFamily: theme.FONTS.TEXT,
         color: theme.COLORS.BLUE1,
         paddingBottom: 40,
-    }
+    },
+
 });

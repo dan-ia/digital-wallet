@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View, KeyboardAvoidingView } from 'react-native';
 
 import theme from '@/styles/theme';
 import { styles } from './styles';
@@ -17,9 +17,12 @@ function buttonAlert() {
 
 export function Login() {
     return (
-        <ScrollView>
-            <View style={styles.container}>
 
+
+        <KeyboardAvoidingView
+            behavior='position'
+            enabled>
+            <View style={styles.container}>
                 <Text style={styles.title}>Welcome to Digital Wallet</Text>
                 <Text style={styles.subtitle}>Sign up with</Text>
 
@@ -45,6 +48,10 @@ export function Login() {
                     />
                 </View>
 
+                <TouchableOpacity style={styles.resetPassword}>
+                    <Text>Recuperar Senha</Text>
+                </TouchableOpacity>
+
                 <View style={styles.viewButtonSend}>
                     <ButtonSend onPress={buttonAlert} name='Login' />
                 </View>
@@ -55,7 +62,7 @@ export function Login() {
                 </View>
 
             </View>
-        </ScrollView >
+        </KeyboardAvoidingView>
 
     );
 }
