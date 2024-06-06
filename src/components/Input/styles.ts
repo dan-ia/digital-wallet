@@ -8,13 +8,13 @@ export const styles = StyleSheet.create({
         borderRadius: 10,
         paddingLeft: 16,
         paddingRight: 40,
-        backgroundColor: theme.COLORS.GRAY6,
+        backgroundColor: theme.COLORS.GRAY5,
     },
     input: {
         width: '90%',
         height: 60,
         borderRadius: 10,
-        backgroundColor: theme.COLORS.GRAY6,
+        backgroundColor: theme.COLORS.GRAY5,
         paddingLeft: 10,
         fontSize: 20,
         fontFamily: theme.FONTS.TEXT

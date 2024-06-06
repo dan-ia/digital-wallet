@@ -1,8 +1,8 @@
 import { useState, useCallback, useEffect } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { StatusBar, } from 'expo-status-bar';
-
 import * as Font from "expo-font"
+import { NavigationContainer } from '@react-navigation/native';
 
 import {
     DMSans_400Regular
@@ -21,7 +21,7 @@ import {
 } from "@expo-google-fonts/poppins"
 
 import * as SplashScreen from "expo-splash-screen";
-import { Login } from './screens/Login';
+import { Routes } from './routes';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -62,14 +62,14 @@ export default function App() {
     }
 
     return (
-
-        <View style={{
-            flex: 1,
-            backgroundColor: '#fefefe'
-        }} onLayout={onLayoutRootView}>
-            <StatusBar style='auto' translucent />
-            <Login />
-        </View>
-
+        <NavigationContainer>
+            <View style={{
+                flex: 1,
+                backgroundColor: '#fff'
+            }} onLayout={onLayoutRootView}>
+                <StatusBar style='auto' translucent />
+                <Routes />
+            </View>
+        </NavigationContainer>
     );
 }

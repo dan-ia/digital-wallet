@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ScrollView, Text, TouchableOpacity, View, KeyboardAvoidingView } from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View, KeyboardAvoidingView, Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import theme from '@/styles/theme';
 import { styles } from './styles';
@@ -13,12 +14,19 @@ function buttonAlert() {
     console.log('Pressionado!')
 }
 
-
-
 export function Login() {
+
+    const navigation = useNavigation()
+
+    function handleCadastro() {
+        navigation.navigate('Cadastro')
+    }
+
+    function handleRecuperarSenha() {
+        navigation.navigate('RecuperarSenha')
+    }
+
     return (
-
-
         <KeyboardAvoidingView
             behavior='position'
             enabled>
@@ -48,7 +56,7 @@ export function Login() {
                     />
                 </View>
 
-                <TouchableOpacity style={styles.resetPassword}>
+                <TouchableOpacity onPress={handleRecuperarSenha} style={styles.resetPassword}>
                     <Text>Recuperar Senha</Text>
                 </TouchableOpacity>
 
@@ -58,7 +66,9 @@ export function Login() {
 
                 <View style={styles.viewRegister}>
                     <Text style={styles.noregister}>Don't have on account yet? </Text>
-                    <Text style={styles.register}>Register</Text>
+                    <Pressable onPress={handleCadastro}>
+                        <Text style={styles.register}>Register</Text>
+                    </Pressable>
                 </View>
 
             </View>
