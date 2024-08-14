@@ -26,6 +26,7 @@ import { Routes } from './routes';
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
+
     const [appIsReady, setAppIsReady] = useState(false);
 
     useEffect(() => {
